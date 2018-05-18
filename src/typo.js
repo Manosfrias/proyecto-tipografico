@@ -23,7 +23,6 @@ function adjustingFontSize () {
 
 
 
-
 window.addEventListener('load', function () {
   if (document.contentEditable !== undefined && document.execCommand !== undefined) {
     window.alert('HTML5 Document Editing API Is Not Supported');
