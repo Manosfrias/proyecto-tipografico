@@ -1,0 +1,9 @@
+{
+  "extends": "semistandard",
+  "overrides" : {
+  	"files": "*",
+  	"rules": {
+  		"space-in-parens": ["warn", "never"]
+  	}
+  }
+}

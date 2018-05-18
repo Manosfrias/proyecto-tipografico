@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<title>Proyecto tipográfico</title>
+	<meta charset="utf-8">
+ 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet"> 
+ 	<link rel="stylesheet" type="text/css" href="resources/js/style.css">
+</head>
+
+<body>
+	<!--Control del texto -->
+	<div id="control-bar">
+		
+		<div class="select-style"><!-- estilos -->
+				<span class="select-style-menu">
+					<div class="jq-falso-link">Style</div>
+					<span class="select-style-arrow"></span>
+				</span>
+				<select autocomplete="off" class="select_jq" >
+				<!-- El value es lo que controla el estilo de las familias tiene que ser coincidente al que vas a poner -->
+					<option value="extralight">Extra-light</option>
+					<option value="extralight-italic">Extra-light Italic</option>
+					<option value="light">Light</option>
+					<option value="light-italic">Light Italic</option>
+					<option value="regular">Regular</option>
+					<option value="regular-italic">Regular Italic</option>
+					<option value="semibold">Semi-bold</option>
+					<option value="semibold-italic">Semi-bold Italic</option>
+					<option value="bold">Bold</option>
+					<option value="bold-italic">Bold Italic</option>
+					<option value="black">Black</option>
+					<option value="black-italic">Black Italic</option>
+				</select>
+		</div><!-- /estilos -->
+
+		<div class="select-OT"><!-- ot -->
+				<a class="select-OT-menu link-falso-jq"><div >OpenType</div></a>
+				<ul id="lista__jq" class="inactive" >
+					<div class="dropdown-modal adv-options">
+			            <div class="dropdown-inner" style="max-height: 954px;">
+			            <!-- data-value: es lo que se agregará -->
+			                <div class="left">
+			                    <ul>
+			                    	<li class="option-group">Basic typesetting</li>
+			                            <li class="option checkbox">
+			                            	<label>
+			                            	<input autocomplete="off" class="especial_jq" name="contextual_ligatures"  type="checkbox">Contextual Ligatures</label>
+			                            </li> 
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="standar_ligatures" data-value="liga" type="checkbox">Standard Ligatures</label>
+			                            </li>
+			                    </ul>
+			                    <ul>
+			                    	<li class="option-group">Letter case</li>
+			                            <li class="option checkbox">
+			                            	<label class="checked"><input autocomplete="off" class="adding_value_jq" data-value="case" name="case_sensitive" type="checkbox">Case-Sensitive Forms</label>
+			                            </li>
+			                             <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="small_caps_from_caps" data-value="c2sc" type="checkbox">Small Capitals From Capitals</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="small_caps" data-value="smcp" type="checkbox">Small Capitals</label>
+			                            </li>
+			                    </ul>
+			                    <ul>
+			                    	<li class="option-group">Numerals and scientific typesetting</li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="fractions" data-value="frac" type="checkbox">Fractions</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label class="checked"><input autocomplete="off" class="adding_value_jq" data-value="onum" type="checkbox">Old Style Figures</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" data-value="pnum" type="checkbox">Proportional Figures</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="ordn" data-value="ordn" type="checkbox">Denominators</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="dnom" data-value="dnom" type="checkbox">Ordinals</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label class="checked"><input autocomplete="off" class="adding_value_jq" name="scientific_inf" data-value="sinf" type="checkbox">Scientific Inferiors</label></li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="sub_script" data-value="subs"  type="checkbox">Subscript</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="super_script" data-value="sups" type="checkbox">Superscript</label>
+			                            </li>
+			                    </ul>
+			                </div>
+			           		<div class="left">
+			                    <ul>
+			                    	<li class="option-group">Typographic variants</li>
+			                           
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" data-value="dlig" type="checkbox">Discretionary Ligatures</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" data-value="hist" type="checkbox">Historical Forms</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" data-value="hlig" type="checkbox">Historical Ligatures</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" name="ornaments" type="checkbox">Ornaments</label>
+			                            </li>
+			                             <li class="option checkbox">
+			                            	<label class="checked"><input autocomplete="off" class="adding_value_jq" data-value="aalt" type="checkbox">Access All Alternates</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label class="checked"><input autocomplete="off" class="adding_value_jq" data-value="salt" type="checkbox">Stylistic Alternates</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" data-value="ss01" type="checkbox">Stylistic Set 01</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" data-value="ss02" type="checkbox">Stylistic Set 02</label>
+			                            </li>
+			                            <li class="option checkbox">
+			                            	<label class="checked"><input autocomplete="off" class="adding_value_jq" data-value="ss03"  name="ss03" type="checkbox">Stylistic Set 03</label></li>
+			                            <li class="option checkbox">
+			                            	<label><input autocomplete="off" class="adding_value_jq" data-value="zero" type="checkbox">Slashed Zero</label>
+			                            </li>
+			                            
+		                        </ul>
+		                    </div>
+		            		<div class="clear"></div>
+		            	</div>
+		        	</div>
+				</ul>
+		</div><!-- /ot -->
+
+		<div class="u-inline-block"><!-- alineamiento -->
+			<button data-tip="Left align" type="button" data-value="left" data-func="justifyleft">Derecha</button>
+			<button data-tip="Centre align"  type="button" data-value="center" data-func="justifycenter">Centro</button>
+			<button data-tip="Centre align" type="button" data-value="right" data-func="justifyright">Right</button>
+		</div><!-- /alineamiento -->
+
+		<div class="u-inline-block tooltip"><!-- altura -->
+			<label>LineHeight</label>
+				<input autocomplete="off"  id="line_height"  type="range" value="0">
+				<output class="tooltiptext" name="line_output" id="line_output" ></output>
+		</div><!-- /altura -->
+
+		<div class="u-inline-block tooltip"><!-- tamaño -->
+			<label for="text-size">fontSize</label>
+				<input autocomplete="off"  id="text-size"  min="12" max="100" type="range" value="12">
+				<output class="tooltiptext" name="font_output" for="text-size" id="font_output" ></output>
+		</div><!-- /tamaño -->
+
+	</div><!-- /Control del texto -->
+
+	<!-- Texto -->
+	<div class="typetext_container"  id="contenedor_jq" >
+	<!-- Aquí cambio : Line-heigth + font-size + text-align + global typeface !-->
+		<div class="ql-editor" id="ql-editor-1" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true">
+			<p>goliath 12548 contra David 154</p> 
+			<!-- Cuando cambio OpenType, me selecciona todo el texto y me crea span alrededor de todo si no lo tengo seleccionado -->
+			<!-- Cuando selecciono una letra, me crea span y me añade estilos. -->
+		</div>
+	</div><!-- /Texto -->
+
+
+
+
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<script type="text/javascript" src="resources/js/typetext.js"></script>
+</body>
+</html>
