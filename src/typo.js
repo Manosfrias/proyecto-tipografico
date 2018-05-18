@@ -1,8 +1,8 @@
-console.log("Dentro y funcionando");
+console.log("Dentro y funcionando de la leche");
 
 window.addEventListener('load', function () {
   if (document.contentEditable !== undefined && document.execCommand !== undefined) {
-    alert('HTML5 Document Editing API Is Not Supported');
+    window.alert('HTML5 Document Editing API Is Not Supported');
   } else {
     document.execCommand('styleWithCSS', false, true);
   }
