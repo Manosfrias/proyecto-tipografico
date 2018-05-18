@@ -1,6 +1,5 @@
-import $ from 'jquery';
-// WTF?!?!?! >
 console.log("Dentro y funcionando");
+
 window.addEventListener('load', function () {
   if (document.contentEditable !== undefined && document.execCommand !== undefined) {
     alert('HTML5 Document Editing API Is Not Supported');
