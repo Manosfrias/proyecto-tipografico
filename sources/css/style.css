@@ -6,7 +6,7 @@ ul {padding: 0px !important}
 
 /*algunos estilos a tener en cuenta*/
 .typetext_container{font-family: 'Source Sans Pro', sans-serif;}
-.inactive{display: none}
+.inactive {display: none}
 #control-bar > div {display: inline-block;}
 
 /*Controla las familias*/
@@ -22,6 +22,7 @@ ul {padding: 0px !important}
 .bold-italic {font-weight: 700; font-style: italic;}
 .black{font-weight: 900}
 .black-italic {font-weight: 900; font-style: italic;}
+
 /* Importante, si no las líneas se van al pairo*/
 #ql-editor-1 p {white-space: pre-line; word-break: break-all;}
 
