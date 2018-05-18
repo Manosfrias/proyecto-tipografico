@@ -3,7 +3,7 @@
   "overrides" : {
   	"files": "*",
   	"rules": {
-  		"space-in-parens": ["warn", "never"]
+  		"space-in-parens": ["error", "never"]
   	}
   }
 }
