@@ -1,39 +1,60 @@
 
-let getSize = document.getElementById('js--fontSize');
-let showSize = document.getElementById('js--fontSizeOutput');
+let getFontSize = document.getElementById('js--fontSize');
+let showFontSize = document.getElementById('js--fontSizeOutput');
 
 let getLineHeight = document.getElementById('js--lineHeightSize');
 let showLineHeight = document.getElementById('js--lineHeightSizeOutput');
 
 let text = document.getElementById('js--textEditor');
 
-getSize.addEventListener('change', function () {
-  adjustingFontSize();
-  showingFontSize();
-});
+function showingSize (getSizeValue, showSizeValue) {
+  let sizeValue = getSizeValue.value;
+  showSizeValue.innerHTML = sizeValue + 'px';
+}
 
-function adjustingFontSize () {
-  let sizeValue = getSize.value;
-  text.style.fontSize = sizeValue + 'px';
+function adjustingTextStyles (getSizeValue, textToModify, property) {
+  let sizeValue = getSizeValue.value;
+  console.log(textToModify);
+  textToModify.style[property] = sizeValue + 'px';
 }
-function showingFontSize () {
-  let sizeValue = getSize.value;
-  showSize.innerHTML = sizeValue + 'px';
-}
+
+getFontSize.addEventListener('change', function () {
+  showingSize(getFontSize, showFontSize);
+  adjustingTextStyles(getFontSize, text, 'fontSize');
+});
 
 getLineHeight.addEventListener('change', function () {
-  adjustingLineHeight();
-  showingLineHeight();
+  showingSize(getLineHeight, showLineHeight);
+  adjustingTextStyles(getLineHeight, text, 'lineHeight');
 });
 
-function adjustingLineHeight () {
-  let sizeValue = getLineHeight.value;
-  text.style.lineHeight = sizeValue + 'px';
-}
-function showingLineHeight () {
-  let sizeValue = getLineHeight.value;
-  showLineHeight.innerHTML = sizeValue + 'px';
-}
+// function showingFontSize () {
+//   let sizeValue = getSize.value;
+//   showSize.innerHTML = sizeValue + 'px';
+// }
+
+// function adjustingFontSize () {
+//   let sizeValue = getSize.value;
+//   text.style.fontSize = sizeValue + 'px';
+// }
+// function showingFontSize () {
+//   let sizeValue = getSize.value;
+//   showSize.innerHTML = sizeValue + 'px';
+// }
+
+// getLineHeight.addEventListener('change', function () {
+//   adjustingLineHeight();
+//   showingLineHeight();
+// });
+
+// function adjustingLineHeight () {
+//   let sizeValue = getLineHeight.value;
+//   text.style.lineHeight = sizeValue + 'px';
+// }
+// function showingLineHeight () {
+//   let sizeValue = getLineHeight.value;
+//   showLineHeight.innerHTML = sizeValue + 'px';
+// }
 
 // function fontSize () {
 //   var rangeInputSize = document.getElementById('text-size').value;
