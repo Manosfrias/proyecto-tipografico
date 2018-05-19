@@ -1,6 +1,10 @@
 
 let getSize = document.getElementById('js--fontSize');
 let showSize = document.getElementById('js--fontSizeOutput');
+
+let getLineHeight = document.getElementById('js--lineHeightSize');
+let showLineHeight = document.getElementById('js--lineHeightSizeOutput');
+
 let text = document.getElementById('js--textEditor');
 
 getSize.addEventListener('change', function () {
@@ -9,16 +13,26 @@ getSize.addEventListener('change', function () {
 });
 
 function adjustingFontSize () {
-  console.log(getSize);
   let sizeValue = getSize.value;
-  console.log('sizeValue : ' + sizeValue);
   text.style.fontSize = sizeValue + 'px';
 }
 function showingFontSize () {
-  let getSize = document.getElementById('js--fontSize');
   let sizeValue = getSize.value;
-  console.log('sizeValue : ' + sizeValue);
   showSize.innerHTML = sizeValue + 'px';
+}
+
+getLineHeight.addEventListener('change', function () {
+  adjustingLineHeight();
+  showingLineHeight();
+});
+
+function adjustingLineHeight () {
+  let sizeValue = getLineHeight.value;
+  text.style.lineHeight = sizeValue + 'px';
+}
+function showingLineHeight () {
+  let sizeValue = getLineHeight.value;
+  showLineHeight.innerHTML = sizeValue + 'px';
 }
 
 // function fontSize () {
