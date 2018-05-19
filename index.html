@@ -138,14 +138,14 @@
 		</div><!-- /alineamiento -->
 
 		<div class="u-inline-block tooltip"><!-- altura -->
-			<label>LineHeight</label>
-				<input autocomplete="off"  id="line_height"  type="range" value="0">
-				<output class="tooltiptext" name="line_output" id="line_output" ></output>
+			<label for="lineHeightSize">Elige el tamaño de altura de línea del texto</label>
+				<input name="lineHeightSize" autocomplete="off"  id="js--lineHeightSize"  type="range" value="0">
+				<output class="tooltiptext" name="fontSizeOutput" for="lineHeightSize" id="js--lineHeightSizeOutput" ></output>
 		</div><!-- /altura -->
 
 		<div class="u-inline-block tooltip"><!-- tamaño -->
 			<label for="fontSize">Elige el tamaño de la tipografía</label>
-				<input autocomplete="off"  id="js--fontSize"  min="12" max="100" type="range" value="12">
+				<input name="fontSize" autocomplete="off"  id="js--fontSize"  min="12" max="100" type="range" value="12">
 				<output class="tooltiptext" name="fontSizeOutput" for="fontSize" id="js--fontSizeOutput" ></output>
 		</div><!-- /tamaño -->
 
@@ -153,20 +153,12 @@
 
 	<!-- Texto -->
 	<div class="typetext_container"  id="contenedor_jq" >
-	<!-- Aquí cambio : Line-heigth + font-size + text-align + global typeface !-->
 		<div class="ql-editor" id="js--textEditor" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true">
 			<p>goliath 12548 contra Salva 154</p> 
-			<!-- Cuando cambio OpenType, me selecciona todo el texto y me crea span alrededor de todo si no lo tengo seleccionado -->
-			<!-- Cuando selecciono una letra, me crea span y me añade estilos. -->
 		</div>
-	</div><!-- /Texto -->
+	</div>
+	<!-- /Texto -->
 
-
-
-
-
-
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
-<script type="text/javascript" src="dist/bundle.js"></script>
+	<script type="text/javascript" src="dist/bundle.js"></script>
 </body>
 </html>
