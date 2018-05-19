@@ -1,13 +1,78 @@
 
-/*Estilos a borrar*/
-body {padding: 5%; margin: 5%; font-family: 'Source Sans Pro', sans-serif;}
-ul li {list-style: none}
-ul {padding: 0px !important}
+body {
+    padding: 5%; 
+    margin: 5%; 
+    font-family: 'Source Sans Pro', sans-serif;
+}
+ul li {
+    list-style: none;
+}
+ul {
+    padding: 0px !important;
+}
+
+
+.editor{
+    border: 1px solid silver;
+    border-radius: 5px
+}
+.editor__control-bar,
+.editor__text-editor{
+    padding: 0 1rem;
+}
+.editor__control-bar{
+    background-color: silver;
+    display: flex;
+    flex-wrap: wrap;
+}
+.text-variants {
+    flex: 0 1 auto;
+    padding: 15px;
+    position: relative;
+}
+.text-variants .text-variants__label,
+.text-variants .text-variants__input {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.text-variants .text-variants__label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.text-variants .text-variants__select,
+.text-variants .text-variants__button{
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 12px;
+}
+.text-variants .text-variants__select {
+    border: none;
+}
+.text-variants .text-variants__button{
+    transition: background-color .3s linear;
+     border: 2px solid #fff;
+}
+.text-variants .text-variants__button:hover {
+    background-color: silver;
+    color: #fff;
+}
+.text-variants .text-variants__button-group{
+    display: flex;
+    justify-content: space-between;
+
+}
+.text-variants .text-variants__button-group .text-variants__button{
+    flex: 0 1 auto;
+}
 
 /*algunos estilos a tener en cuenta*/
-.typetext_container{font-family: 'Source Sans Pro', sans-serif;}
 .inactive {display: none}
-#control-bar > div {display: inline-block;}
 
 /*Controla las familias*/
 .extralight {font-weight: 200}
@@ -24,15 +89,14 @@ ul {padding: 0px !important}
 .black-italic {font-weight: 900; font-style: italic;}
 
 /* Importante, si no las líneas se van al pairo*/
-#ql-editor-1 p {white-space: pre-line; word-break: break-all;}
-
+#editor__text-editor p {white-space: pre-line; word-break: break-all;}
 
 /**Tootip**/
- /* Container */
-.tooltip {position: relative;display: inline-block;}
-
-/*Texto*/
+.tooltip {
+    display: inline-block;
+}
 .tooltip .tooltiptext {
+    font-size: 12px;
     visibility: hidden;
     width: 120px;
     background-color: #555;
@@ -40,20 +104,15 @@ ul {padding: 0px !important}
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-
-    /* Posición del texto del tooltip */
     position: absolute;
     z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-
-    /* Entrada y salida del tooltip */
+    top: 0%;
+    left: 0;
+    right: 0;
+    margin: auto;
     opacity: 0;
     transition: opacity 1s;
 }
-
-/* Flecha */
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
@@ -64,6 +123,7 @@ ul {padding: 0px !important}
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
-
-/* Enseñar el tootlip */
-.tooltip:hover .tooltiptext {visibility: visible;opacity: 1;}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

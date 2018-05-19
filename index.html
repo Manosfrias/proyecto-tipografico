@@ -8,16 +8,13 @@
 </head>
 
 <body>
-	<!--Control del texto -->
-	<div id="control-bar">
-		
-		<div class="select-style"><!-- estilos -->
-				<span class="select-style-menu">
-					<div class="jq-falso-link">Style</div>
-					<span class="select-style-arrow"></span>
-				</span>
-				<select autocomplete="off" class="select_jq" >
-				<!-- El value es lo que controla el estilo de las familias tiene que ser coincidente al que vas a poner -->
+	<section class="editor">
+		<!--Control del texto -->
+		<div class="editor__control-bar">
+			
+			<div class="text-variants">
+				<label class="text-variants__label">Estilos tipográficos</label>
+				<select id="js--fontStyles" class="text-variants__select" autocomplete="off"  >
 					<option value="extralight">Extra-light</option>
 					<option value="extralight-italic">Extra-light Italic</option>
 					<option value="light">Light</option>
@@ -31,11 +28,11 @@
 					<option value="black">Black</option>
 					<option value="black-italic">Black Italic</option>
 				</select>
-		</div><!-- /estilos -->
-
-		<div class="select-OT"><!-- ot -->
-				<a class="select-OT-menu link-falso-jq"><div >OpenType</div></a>
-				<ul id="lista__jq" class="inactive" >
+			</div>
+			<div class="text-variants"><!-- ot -->
+				<label class="text-variants__label">OpenType</label>
+				<button class="text-variants__button">Selecciona</button>
+				<ul id="js--showOpenTypes" class="inactive open-types__list" >
 					<div class="dropdown-modal adv-options">
 			            <div class="dropdown-inner" style="max-height: 954px;">
 			            <!-- data-value: es lo que se agregará -->
@@ -129,35 +126,38 @@
 		            	</div>
 		        	</div>
 				</ul>
-		</div><!-- /ot -->
+			</div><!-- /ot -->
 
-		<div class="u-inline-block"><!-- alineamiento -->
-			<button data-tip="Left align" type="button" data-value="left" data-func="justifyleft">Derecha</button>
-			<button data-tip="Centre align"  type="button" data-value="center" data-func="justifycenter">Centro</button>
-			<button data-tip="Centre align" type="button" data-value="right" data-func="justifyright">Right</button>
-		</div><!-- /alineamiento -->
+			<div class="text-variants"><!-- alineamiento -->
+				<label class="text-variants__label" for="alingStyle">Elige el tamaño de altura de línea del texto</label>
+				<div class="text-variants__button-group">
+					<button class="text-variants__button" name="alingStyle" data-tip="Left align" type="button" data-value="left" data-func="justifyleft">Derecha</button>
+					<button class="text-variants__button" name="alingStyle" data-tip="Centre align"  type="button" data-value="center" data-func="justifycenter">Centro</button>
+					<button class="text-variants__button" name="alingStyle" data-tip="Centre align" type="button" data-value="right" data-func="justifyright">Izquierda</button>
+				</div>
+			</div><!-- /alineamiento -->
 
-		<div class="u-inline-block tooltip"><!-- altura -->
-			<label for="lineHeightSize">Elige el tamaño de altura de línea del texto</label>
-				<input name="lineHeightSize" autocomplete="off"  id="js--lineHeightSize"  type="range" value="0">
+			<div class="text-variants tooltip"><!-- altura -->
+				<label class="text-variants__label" for="lineHeightSize">Elige el tamaño de altura de línea del texto</label>
+				<input class="text-variants__input" name="lineHeightSize" autocomplete="off"  id="js--lineHeightSize"  type="range" value="0">
 				<output class="tooltiptext" name="fontSizeOutput" for="lineHeightSize" id="js--lineHeightSizeOutput" ></output>
-		</div><!-- /altura -->
+			</div><!-- /altura -->
 
-		<div class="u-inline-block tooltip"><!-- tamaño -->
-			<label for="fontSize">Elige el tamaño de la tipografía</label>
-				<input name="fontSize" autocomplete="off"  id="js--fontSize"  min="12" max="100" type="range" value="12">
+			<div class="text-variants tooltip"><!-- tamaño -->
+				<label class="text-variants__label" for="fontSize">Elige el tamaño de la tipografía</label>
+				<input class="text-variants__input" name="fontSize" autocomplete="off"  id="js--fontSize"  min="12" max="100" type="range" value="12">
 				<output class="tooltiptext" name="fontSizeOutput" for="fontSize" id="js--fontSizeOutput" ></output>
-		</div><!-- /tamaño -->
+			</div><!-- /tamaño -->
 
-	</div><!-- /Control del texto -->
+		</div><!-- /Control del texto -->
 
-	<!-- Texto -->
-	<div class="typetext_container"  id="contenedor_jq" >
-		<div class="ql-editor" id="js--textEditor" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true">
+		<!-- Texto -->
+		<div class="editor__text-editor" id="js--textEditor" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true">
 			<p>goliath 12548 contra Salva 154</p> 
 		</div>
-	</div>
-	<!-- /Texto -->
+
+		<!-- /Texto -->
+	</section>
 
 	<script type="text/javascript" src="dist/bundle.js"></script>
 </body>

@@ -9,7 +9,7 @@ let text = document.getElementById('js--textEditor');
 
 function showingSize (getSizeValue, showSizeValue) {
   let sizeValue = getSizeValue.value;
-  showSizeValue.innerHTML = sizeValue + 'px';
+  showSizeValue.innerHTML = sizeValue + ' px';
 }
 
 function adjustingTextStyles (getSizeValue, textToModify, property) {
