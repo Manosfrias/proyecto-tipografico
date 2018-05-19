@@ -1,4 +1,3 @@
-
 let getFontSize = document.getElementById('js--fontSize');
 let showFontSize = document.getElementById('js--fontSizeOutput');
 
@@ -14,7 +13,6 @@ function showingSize (getSizeValue, showSizeValue) {
 
 function adjustingTextStyles (getSizeValue, textToModify, property) {
   let sizeValue = getSizeValue.value;
-  console.log(textToModify);
   textToModify.style[property] = sizeValue + 'px';
 }
 
@@ -27,7 +25,6 @@ getLineHeight.addEventListener('change', function () {
   showingSize(getLineHeight, showLineHeight);
   adjustingTextStyles(getLineHeight, text, 'lineHeight');
 });
-
 // function showingFontSize () {
 //   let sizeValue = getSize.value;
 //   showSize.innerHTML = sizeValue + 'px';
