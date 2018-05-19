@@ -1,6 +1,25 @@
-window.onload(function () {
+
+let getSize = document.getElementById('js--fontSize');
+let showSize = document.getElementById('js--fontSizeOutput');
+let text = document.getElementById('js--textEditor');
+
+getSize.addEventListener('change', function () {
   adjustingFontSize();
+  showingFontSize();
 });
+
+function adjustingFontSize () {
+  console.log(getSize);
+  let sizeValue = getSize.value;
+  console.log('sizeValue : ' + sizeValue);
+  text.style.fontSize = sizeValue + 'px';
+}
+function showingFontSize () {
+  let getSize = document.getElementById('js--fontSize');
+  let sizeValue = getSize.value;
+  console.log('sizeValue : ' + sizeValue);
+  showSize.innerHTML = sizeValue + 'px';
+}
 
 // function fontSize () {
 //   var rangeInputSize = document.getElementById('text-size').value;
@@ -13,15 +32,6 @@ window.onload(function () {
 //     }
 //   }
 // }
-
-function adjustingFontSize () {
-  let sizeValue = document.getElementById('text-size').value;
-  let text = document.getElementById('js--textEditor');
-  text.style.fontSize = sizeValue + 'px';
-}
-
-
-
 
 window.addEventListener('load', function () {
   if (document.contentEditable !== undefined && document.execCommand !== undefined) {
