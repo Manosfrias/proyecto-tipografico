@@ -144,9 +144,9 @@
 		</div><!-- /altura -->
 
 		<div class="u-inline-block tooltip"><!-- tamaño -->
-			<label for="text-size">fontSize</label>
-				<input autocomplete="off"  id="text-size"  min="12" max="100" type="range" value="12">
-				<output class="tooltiptext" name="font_output" for="text-size" id="font_output" ></output>
+			<label for="fontSize">Elige el tamaño de la tipografía</label>
+				<input autocomplete="off"  id="js--fontSize"  min="12" max="100" type="range" value="12">
+				<output class="tooltiptext" name="fontSizeOutput" for="fontSize" id="js--fontSizeOutput" ></output>
 		</div><!-- /tamaño -->
 
 	</div><!-- /Control del texto -->
@@ -154,7 +154,7 @@
 	<!-- Texto -->
 	<div class="typetext_container"  id="contenedor_jq" >
 	<!-- Aquí cambio : Line-heigth + font-size + text-align + global typeface !-->
-		<div class="ql-editor" id="ql-editor-1" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true">
+		<div class="ql-editor" id="js--textEditor" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true">
 			<p>goliath 12548 contra Salva 154</p> 
 			<!-- Cuando cambio OpenType, me selecciona todo el texto y me crea span alrededor de todo si no lo tengo seleccionado -->
 			<!-- Cuando selecciono una letra, me crea span y me añade estilos. -->
