@@ -14,19 +14,19 @@
 			
 			<div class="text-variants">
 				<label class="text-variants__label">Estilos tipográficos</label>
-				<select id="js--fontStyles" class="text-variants__select" autocomplete="off"  >
-					<option value="extralight">Extra-light</option>
-					<option value="extralight-italic">Extra-light Italic</option>
-					<option value="light">Light</option>
-					<option value="light-italic">Light Italic</option>
-					<option value="regular">Regular</option>
-					<option value="regular-italic">Regular Italic</option>
-					<option value="semibold">Semi-bold</option>
-					<option value="semibold-italic">Semi-bold Italic</option>
-					<option value="bold">Bold</option>
-					<option value="bold-italic">Bold Italic</option>
-					<option value="black">Black</option>
-					<option value="black-italic">Black Italic</option>
+				<select id="js--fontStyleSelector" class="text-variants__select" autocomplete="off"  >
+					<option value="100">Extra-light</option>
+					<option value="100" data-font-style="italic" >Extra-light Italic</option>
+					<option value="300">Light</option>
+					<option value="300" data-font-style="italic">Light Italic</option>
+					<option value="400" selected="true">Regular</option>
+					<option value="400" data-font-style="italic">Regular Italic</option>
+					<option value="600">Semi-bold</option>
+					<option value="600" data-font-style="italic">Semi-bold Italic</option>
+					<option value="700">Bold</option>
+					<option value="700" data-font-style="italic">Bold Italic</option>
+					<option value="900">Black</option>
+					<option value="900" data-font-style="italic">Black Italic</option>
 				</select>
 			</div>
 			<div class="text-variants"><!-- ot -->
@@ -129,24 +129,24 @@
 			</div><!-- /ot -->
 
 			<div class="text-variants"><!-- alineamiento -->
-				<label class="text-variants__label" for="alingStyle">Elige el tamaño de altura de línea del texto</label>
+				<label class="text-variants__label" for="textAlignmentStyle">Elige la alineación del texto</label>
 				<div class="text-variants__button-group">
-					<button class="text-variants__button" name="alingStyle" data-tip="Left align" type="button" data-value="left" data-func="justifyleft">Derecha</button>
-					<button class="text-variants__button" name="alingStyle" data-tip="Centre align"  type="button" data-value="center" data-func="justifycenter">Centro</button>
-					<button class="text-variants__button" name="alingStyle" data-tip="Centre align" type="button" data-value="right" data-func="justifyright">Izquierda</button>
+					<button type="button" class="text-variants__button" name="textAlignmentStyle" data-alignment-style="left">Derecha</button>
+					<button type="button" class="text-variants__button" name="textAlignmentStyle" data-alignment-style="center">Centro</button>
+					<button type="button" class="text-variants__button" name="textAlignmentStyle" data-alignment-style="right">Izquierda</button>
 				</div>
 			</div><!-- /alineamiento -->
 
 			<div class="text-variants tooltip"><!-- altura -->
 				<label class="text-variants__label" for="lineHeightSize">Elige el tamaño de altura de línea del texto</label>
-				<input class="text-variants__input" name="lineHeightSize" autocomplete="off"  id="js--lineHeightSize"  type="range" value="0">
-				<output class="tooltiptext" name="fontSizeOutput" for="lineHeightSize" id="js--lineHeightSizeOutput" ></output>
+				<input class="text-variants__input" name="lineHeightSize" autocomplete="off"  id="js--lineHeightSizeSlider"  type="range" value="0">
+				<output class="tooltiptext" name="fontSizeOutput" for="lineHeightSize" id="js--output_lineHeightSize" ></output>
 			</div><!-- /altura -->
 
 			<div class="text-variants tooltip"><!-- tamaño -->
 				<label class="text-variants__label" for="fontSize">Elige el tamaño de la tipografía</label>
-				<input class="text-variants__input" name="fontSize" autocomplete="off"  id="js--fontSize"  min="12" max="100" type="range" value="12">
-				<output class="tooltiptext" name="fontSizeOutput" for="fontSize" id="js--fontSizeOutput" ></output>
+				<input class="text-variants__input" name="fontSize" autocomplete="off"  id="js--fontSizeSlider"  min="12" max="100" type="range" value="12">
+				<output class="tooltiptext" name="fontSizeOutput" for="fontSize" id="js--output_fontSize" ></output>
 			</div><!-- /tamaño -->
 
 		</div><!-- /Control del texto -->

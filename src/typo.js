@@ -1,98 +1,87 @@
-let getFontSize = document.getElementById('js--fontSize');
-let showFontSize = document.getElementById('js--fontSizeOutput');
-
-let getLineHeight = document.getElementById('js--lineHeightSize');
-let showLineHeight = document.getElementById('js--lineHeightSizeOutput');
-
 let text = document.getElementById('js--textEditor');
 
-function showingSize (getSizeValue, showSizeValue) {
-  let sizeValue = getSizeValue.value;
-  showSizeValue.innerHTML = sizeValue + ' px';
+let fontStyles = document.getElementById('js--fontStyleSelector');
+
+let textAlignmentStyles = document.querySelectorAll('button[data-alignment-style]');
+
+let fontSize = document.getElementById('js--fontSizeSlider');
+let outputOfFontSize = document.getElementById('js--output_fontSize');
+
+let lineHeight = document.getElementById('js--lineHeightSizeSlider');
+let outputOfLineHeightSize = document.getElementById('js--output_lineHeightSize');
+
+function setfontStyle (fontStyles, textToModify) {
+  let option = fontStyles.options[fontStyles.selectedIndex];
+  setFontWeight(option, text);
+  setItalic(option, textToModify);
 }
 
-function adjustingTextStyles (getSizeValue, textToModify, property) {
-  let sizeValue = getSizeValue.value;
+function setFontWeight (option, textToModify) {
+  let fontWeight = option.value;
+  textToModify.style.fontWeight = fontWeight;
+}
+
+function setItalic (option, textToModify) {
+  let italic = option.dataset.fontStyle;
+  if (italic === 'italic') {
+    textToModify.style.fontStyle = 'italic';
+  } else {
+    textToModify.style.fontStyle = '';
+  }
+}
+
+function setTextAlignment (textAlignmentStyle, textToModify) {
+  textToModify.style.textAlign = textAlignmentStyle;
+}
+
+function adjustTextStyles (sizeValueSlider, textToModify, property) {
+  let sizeValue = sizeValueSlider.value;
   textToModify.style[property] = sizeValue + 'px';
 }
 
-getFontSize.addEventListener('change', function () {
-  showingSize(getFontSize, showFontSize);
-  adjustingTextStyles(getFontSize, text, 'fontSize');
-});
-
-getLineHeight.addEventListener('change', function () {
-  showingSize(getLineHeight, showLineHeight);
-  adjustingTextStyles(getLineHeight, text, 'lineHeight');
-});
-// function showingFontSize () {
-//   let sizeValue = getSize.value;
-//   showSize.innerHTML = sizeValue + 'px';
-// }
-
-// function adjustingFontSize () {
-//   let sizeValue = getSize.value;
-//   text.style.fontSize = sizeValue + 'px';
-// }
-// function showingFontSize () {
-//   let sizeValue = getSize.value;
-//   showSize.innerHTML = sizeValue + 'px';
-// }
-
-// getLineHeight.addEventListener('change', function () {
-//   adjustingLineHeight();
-//   showingLineHeight();
-// });
-
-// function adjustingLineHeight () {
-//   let sizeValue = getLineHeight.value;
-//   text.style.lineHeight = sizeValue + 'px';
-// }
-// function showingLineHeight () {
-//   let sizeValue = getLineHeight.value;
-//   showLineHeight.innerHTML = sizeValue + 'px';
-// }
-
-// function fontSize () {
-//   var rangeInputSize = document.getElementById('text-size').value;
-//   document.execCommand('fontSize', false, '7');
-//   var fontElements = document.getElementsByTagName('font');
-//   for (var i = 0, len = fontElements.length; i < len; ++i) {
-//     if (fontElements[i].size === '7') {
-//       fontElements[i].removeAttribute('size');
-//       fontElements[i].style.fontSize = rangeInputSize + 'px';
-//     }
-//   }
-// }
-
-window.addEventListener('load', function () {
-  if (document.contentEditable !== undefined && document.execCommand !== undefined) {
-    window.alert('HTML5 Document Editing API Is Not Supported');
-  } else {
-    document.execCommand('styleWithCSS', false, true);
-  }
-}, false);
-
-var textArea = document.querySelectorAll('.typetext_container');
-
-for (var i = 0; i < textArea.length; i++) {
-  textArea[i].addEventListener('click', function () {
-    document.getElementById('control-bar').style.display = 'block';
-  }, false);
+function showSize (sizeValueSlider, outputOfSizeValue) {
+  let sizeValue = sizeValueSlider.value;
+  outputOfSizeValue.innerHTML = sizeValue + ' px';
 }
+
+fontStyles.addEventListener('change', function () {
+  setfontStyle(fontStyles, text);
+});
+
+Array.from(textAlignmentStyles).forEach(textAlignmentStyle => {
+  textAlignmentStyle.addEventListener('click', function () {
+    let textAlignmentStyle = this.dataset.alignmentStyle;
+    setTextAlignment(textAlignmentStyle, text);
+  });
+});
+
+fontSize.addEventListener('change', function () {
+  showSize(fontSize, outputOfFontSize);
+  adjustTextStyles(fontSize, text, 'fontSize');
+});
+
+lineHeight.addEventListener('change', function () {
+  showSize(lineHeight, outputOfLineHeightSize);
+  adjustTextStyles(lineHeight, text, 'lineHeight');
+});
+
+// window.addEventListener('load', function () {
+//   if (document.contentEditable !== undefined && document.execCommand !== undefined) {
+//     window.alert('HTML5 Document Editing API Is Not Supported');
+//   } else {
+//     document.execCommand('styleWithCSS', false, true);
+//   }
+// }, false);
+
+// var textArea = document.querySelectorAll('.typetext_container');
+
+// for (var i = 0; i < textArea.length; i++) {
+//   textArea[i].addEventListener('click', function () {
+//     document.getElementById('control-bar').style.display = 'block';
+//   }, false);
+// }
 
 // $('.link-falso-jq').click(function () { $('#lista__jq').toggleClass('inactive'); });
-
-// $('[data-func]').click(function () {
-//   document.execCommand($(this).data('func'), false);
-// });
-
-
-
-function lineHeight () {
-  var rangeInput_lineHeight = document.getElementById('line_height').value;
-  document.getElementById('contenedor_jq').style.lineHeight = rangeInput_lineHeight + 'px';
-}
 
 /* Basic typesetting */
 // $('input[name="standar_ligatures"]').change(function () {

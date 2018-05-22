@@ -14,7 +14,7 @@ ul {
 
 .editor{
     border: 1px solid silver;
-    border-radius: 5px
+    border-radius: 5px;
 }
 .editor__control-bar,
 .editor__text-editor{
@@ -50,6 +50,7 @@ ul {
     font-weight: 600;
     cursor: pointer;
     font-size: 12px;
+    margin: 1px
 }
 .text-variants .text-variants__select {
     border: none;
