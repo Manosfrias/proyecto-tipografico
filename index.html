@@ -11,6 +11,10 @@
 	<section class="editor">
 		<!--Control del texto -->
 		<div class="editor__control-bar">
+			<div class="text-variants"><!-- alineamiento -->
+				<label class="text-variants__label" for="radomClassButton">¡Vuelvete loco!</label>
+				<button type="button" id="js--randomButton" class="text-variants__button" name="radomClassButton">Random</button>
+			</div><!-- /alineamiento -->
 			
 			<div class="text-variants">
 				<label class="text-variants__label">Estilos tipográficos</label>
@@ -34,8 +38,8 @@
 				<button class="text-variants__button">Selecciona</button>
 				<ul id="js--showOpenTypes" class="inactive open-types__list" >
 					<div class="dropdown-modal adv-options">
-			            <div class="dropdown-inner" style="max-height: 954px;">
-			            <!-- data-value: es lo que se agregará -->
+			            <div class="dropdown-inner">
+			            
 			                <div class="left">
 			                    <ul>
 			                    	<li class="option-group">Basic typesetting</li>
@@ -152,8 +156,8 @@
 		</div><!-- /Control del texto -->
 
 		<!-- Texto -->
-		<div class="editor__text-editor" id="js--textEditor" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true">
-			<p>goliath 12548 contra Salva 154</p> 
+		<div class="editor__text-editor style-group" id="js--textEditor" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true">
+			goliath 12548 contra Salva 154
 		</div>
 
 		<!-- /Texto -->

@@ -1,28 +1,30 @@
-let text = document.getElementById('js--textEditor');
+const text = document.getElementById('js--textEditor');
 
-let fontStyles = document.getElementById('js--fontStyleSelector');
+const fontStyles = document.getElementById('js--fontStyleSelector');
 
-let textAlignmentStyles = document.querySelectorAll('button[data-alignment-style]');
+const textAlignmentStyles = document.querySelectorAll('button[data-alignment-style]');
 
-let fontSize = document.getElementById('js--fontSizeSlider');
-let outputOfFontSize = document.getElementById('js--output_fontSize');
+const fontSize = document.getElementById('js--fontSizeSlider');
+const outputOfFontSize = document.getElementById('js--output_fontSize');
 
-let lineHeight = document.getElementById('js--lineHeightSizeSlider');
-let outputOfLineHeightSize = document.getElementById('js--output_lineHeightSize');
+const lineHeight = document.getElementById('js--lineHeightSizeSlider');
+const outputOfLineHeightSize = document.getElementById('js--output_lineHeightSize');
 
-function setfontStyle (fontStyles, textToModify) {
-  let option = fontStyles.options[fontStyles.selectedIndex];
+const randomButton = document.getElementById('js--randomButton');
+
+function setFontStyle (fontStyles, textToModify) {
+  const option = fontStyles.options[fontStyles.selectedIndex];
   setFontWeight(option, text);
   setItalic(option, textToModify);
 }
 
 function setFontWeight (option, textToModify) {
-  let fontWeight = option.value;
+  const fontWeight = option.value;
   textToModify.style.fontWeight = fontWeight;
 }
 
 function setItalic (option, textToModify) {
-  let italic = option.dataset.fontStyle;
+  const italic = option.dataset.fontStyle;
   if (italic === 'italic') {
     textToModify.style.fontStyle = 'italic';
   } else {
@@ -35,22 +37,57 @@ function setTextAlignment (textAlignmentStyle, textToModify) {
 }
 
 function adjustTextStyles (sizeValueSlider, textToModify, property) {
-  let sizeValue = sizeValueSlider.value;
+  const sizeValue = sizeValueSlider.value;
   textToModify.style[property] = sizeValue + 'px';
 }
 
 function showSize (sizeValueSlider, outputOfSizeValue) {
-  let sizeValue = sizeValueSlider.value;
+  const sizeValue = sizeValueSlider.value;
   outputOfSizeValue.innerHTML = sizeValue + ' px';
+}
+// Clear styles
+function addRandomClass () {
+  const className = 'class-' + ('' + Math.random()).substr(2, 1); // '' + > convierte en string.
+  const selectionRange = getRange(); // es la posición del cursor
+  const styleGroup = getStyleGroup(selectionRange);
+  styleGroup.classList.add(className);
+}
+
+function getRange () {
+  const selection = window.getSelection();
+  // console.log(selection.containsNode(document.querySelectorAll('span'), false));
+  console.log('selection : ' + selection);
+  const node = selection.anchorNode;
+  console.log('node :' + node);
+  return selection.getRangeAt(0);
+}
+const array = [];
+
+function getStyleGroup (selectionRange) {
+  console.log('array : ' + array);
+  const newSpan = document.createElement('span');
+  const isInArray = array.indexOf('' + selectionRange);
+  if (isInArray > -1) {
+    console.log('hurray! is in array');
+    
+  } else {
+    console.log('oh no! is not in array');
+    array.push('' + selectionRange);
+    selectionRange.surroundContents(newSpan);
+  }
+  return newSpan;
+  // anidarrr
+  // puedo llevar una estructura auxiliar
+  // puedo meter la selección en un array > para saber que estamos en el mismo sitio. pe. 1235456 y tener arrays del 1 al 4 y cosas asi
 }
 
 fontStyles.addEventListener('change', function () {
-  setfontStyle(fontStyles, text);
+  setFontStyle(fontStyles, text);
 });
 
 Array.from(textAlignmentStyles).forEach(textAlignmentStyle => {
   textAlignmentStyle.addEventListener('click', function () {
-    let textAlignmentStyle = this.dataset.alignmentStyle;
+    const textAlignmentStyle = this.dataset.alignmentStyle;
     setTextAlignment(textAlignmentStyle, text);
   });
 });
@@ -63,6 +100,10 @@ fontSize.addEventListener('change', function () {
 lineHeight.addEventListener('change', function () {
   showSize(lineHeight, outputOfLineHeightSize);
   adjustTextStyles(lineHeight, text, 'lineHeight');
+});
+
+randomButton.addEventListener('click', function () {
+  addRandomClass();
 });
 
 // window.addEventListener('load', function () {
@@ -92,7 +133,7 @@ lineHeight.addEventListener('change', function () {
 //   this.checked ? $('#contenedor_jq').addClass('contextual_ligatures') : $('#contenedor_jq').removeClass('contextual_ligatures');
 // });
 
-// /* Letter case */
+// /* constter case */
 // $('input[name="small_caps"]').change(function () {
 //   this.checked ? $('#contenedor_jq').addClass('smcp') : $('#contenedor_jq').removeClass('smcp');
 // });

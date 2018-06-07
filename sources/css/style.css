@@ -26,6 +26,7 @@ ul {
     flex-wrap: wrap;
 }
 .text-variants {
+    text-align: center;
     flex: 0 1 auto;
     padding: 15px;
     position: relative;
@@ -127,4 +128,35 @@ ul {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+.class-1{
+    color: FireBrick,
+}
+.class-2{
+    color: DodgerBlue 
+}
+.class-3{
+    color: Indigo  
+}
+.class-4{
+    color: LawnGreen  
+}
+.class-5{
+    color: MediumPurple  
+}
+.class-6{
+    color: Gold   
+}
+.class-7{
+    color: DarkTurquoise  
+}
+.class-8{
+    color: DeepPink  
+}
+.class-9{
+    color: DarkViolet  
+}
+.class-0{
+    color: DarkOrange  
 }
