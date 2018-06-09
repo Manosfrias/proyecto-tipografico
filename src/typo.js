@@ -10,7 +10,7 @@ const outputOfFontSize = document.getElementById('js--output_fontSize');
 const lineHeight = document.getElementById('js--lineHeightSizeSlider');
 const outputOfLineHeightSize = document.getElementById('js--output_lineHeightSize');
 
-const randomButton = document.getElementById('js--randomButton');
+export const randomButton = document.getElementById('js--randomButton');
 
 function setFontStyle (fontStyles, textToModify) {
   const option = fontStyles.options[fontStyles.selectedIndex];
@@ -55,31 +55,43 @@ function addRandomClass () {
 
 function getRange () {
   const selection = window.getSelection();
-  // console.log(selection.containsNode(document.querySelectorAll('span'), false));
-  console.log('selection : ' + selection);
-  const node = selection.anchorNode;
-  console.log('node :' + node);
   return selection.getRangeAt(0);
 }
-const array = [];
 
 function getStyleGroup (selectionRange) {
-  console.log('array : ' + array);
   const newSpan = document.createElement('span');
-  const isInArray = array.indexOf('' + selectionRange);
-  if (isInArray > -1) {
-    console.log('hurray! is in array');
-    
-  } else {
-    console.log('oh no! is not in array');
-    array.push('' + selectionRange);
-    selectionRange.surroundContents(newSpan);
-  }
+  selectionRange.surroundContents(newSpan);
   return newSpan;
-  // anidarrr
-  // puedo llevar una estructura auxiliar
-  // puedo meter la selección en un array > para saber que estamos en el mismo sitio. pe. 1235456 y tener arrays del 1 al 4 y cosas asi
 }
+
+// EL PROBLEMA: sumas distintos estilos
+
+// const array = [];
+
+// function containsNodes (selection, nodes) {
+//   console.log('array : ' + array);
+//   const isInArray = array.indexOf('' + selectionRange);
+//   if (isInArray > -1) {
+//     console.log('hurray! is in array');
+//   } else {
+//     console.log('oh no! is not in array');
+//     array.push('' + selectionRange);
+//     selectionRange.surroundContents(newSpan);
+//   }
+// }
+
+// nextSibiling
+// previousSibiling
+// get Candidato
+// inicio === fin ? candidato : no candidato;
+// documentacion sobre NODE y ELEMENT para ver como se navega el DOM
+// Mover elementos por el DOM
+// No te frustes
+// O nos ponemos a experimentar en una hoja en sucio o no ensiamos código.
+// Crearme un módulo para mis mierdas
+// Y si no, déjalo bonito... o comentalo
+
+// DI NO AL CODIGO DE MIERDA
 
 fontStyles.addEventListener('change', function () {
   setFontStyle(fontStyles, text);
@@ -199,3 +211,4 @@ randomButton.addEventListener('click', function () {
 // $('input[name="ornaments"]').change(function () {
 //   this.checked ? $('#contenedor_jq').addClass('ornaments') : $('#contenedor_jq').removeClass('ornaments');
 // });
+export {getRange};
