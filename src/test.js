@@ -15,9 +15,7 @@ function bestCandidate () {
   } else {
     const isAParent = posibleCandidate.startContainer.childNodes;
     if (isAParent) {
-      isAParent.forEach(function (parent) {
-        parentHasSpan(parent);
-      });
+      isAParent.forEach(parentHasSpan);
     }
   }
   return posibleCandidate;
@@ -38,9 +36,13 @@ function parentHasChildren (parent) {
 
 function removeSpanFromChildrens (parent) {
   const parentChildrens = parent.children;
-  for (let child = 0; child < parentChildrens.length; child++) {
-    parentChildrens[child].classList.add('remove');
-  }
+  console.log(parentChildrens);
+  [].forEach.call(parentChildrens, child => {
+    child.classList.add('remove');
+  });
+  // for (let child = 0; child < parentChildrens.length; child++) {
+  //   parentChildrens[child].classList.add('remove');
+  // }
 }
 
 // Right now, the bestCandidate() do too many functions.
