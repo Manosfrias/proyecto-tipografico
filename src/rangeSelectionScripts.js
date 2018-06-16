@@ -1,9 +1,9 @@
 export const randomButton = document.getElementById('js--randomButton');
 
-function addRandomClass () {
+function addRandomClass (styleGroup) {
   const className = 'class-' + ('' + Math.random()).substr(2, 1);
-  const selectionRange = getRange();
-  const styleGroup = getStyleGroup(selectionRange);
+  // const selectionRange = getRange();
+  // const styleGroup = newStyleGroup(selectionRange);
   styleGroup.classList.add(className);
 }
 
@@ -12,7 +12,7 @@ function getRange () {
   return selection.getRangeAt(0);
 }
 
-function getStyleGroup (selectionRange) {
+function newStyleGroup (selectionRange) {
   const newSpan = document.createElement('span');
   selectionRange.surroundContents(newSpan);
   return newSpan;
@@ -22,4 +22,4 @@ function getStyleGroup (selectionRange) {
 //   addRandomClass();
 // });
 
-export {getRange};
+export {getRange, newStyleGroup, addRandomClass};
