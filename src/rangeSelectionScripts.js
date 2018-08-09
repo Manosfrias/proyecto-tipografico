@@ -18,8 +18,4 @@ function newStyleGroup (selectionRange) {
   return newSpan;
 }
 
-// randomButton.addEventListener('click', function () {
-//   addRandomClass();
-// });
-
 export {getRange, newStyleGroup, addRandomClass};

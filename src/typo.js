@@ -1,3 +1,5 @@
+import { getBestFittingStyledGroup } from './test.js';
+
 const text = document.getElementById('js--textEditor');
 
 const fontStyles = document.getElementById('js--fontStyleSelector');
@@ -12,7 +14,7 @@ const outputOfLineHeightSize = document.getElementById('js--output_lineHeightSiz
 
 function setFontStyle (fontStyles, textToModify) {
   const option = fontStyles.options[fontStyles.selectedIndex];
-  setFontWeight(option, text);
+  setFontWeight(option, textToModify);
   setItalic(option, textToModify);
 }
 
@@ -45,7 +47,9 @@ function showSize (sizeValueSlider, outputOfSizeValue) {
 }
 
 fontStyles.addEventListener('change', function () {
-  setFontStyle(fontStyles, text);
+  const styleGroup = getBestFittingStyledGroup();
+  console.log('styleGroup: '+ styleGroup);
+  setFontStyle(fontStyles, styleGroup);
 });
 
 Array.from(textAlignmentStyles).forEach(textAlignmentStyle => {

@@ -10,7 +10,17 @@ function getBestFittingStyledGroup () {
 
   if (isMultiElementsRange) {
     console.log('Soy múltiple!');
-    return;
+    const styleGroup = null;
+
+    let end = range.endOffset;
+    let start = range.startOffset;
+    console.log('end: ' + end);
+    console.log('start: ' + start);
+    console.log(startContainer.splitText(start));
+    console.log(endContainer.splitText(end));
+    // esto de arriba nos devuelve lo que tiene que quedar dentro del nuevo span
+    // No sé si estoy yendo viendo... pero bueno
+    return styleGroup;
   }
   console.log('Soy single!');
   const singleElement = startContainer;
@@ -32,7 +42,6 @@ randomButton.addEventListener('click', function () {
 });
 
 // Falta devolver el best fit;
-// Si es parcial > devolver un span nuevo, rodenado la selección
 // Si es completo > 1. devolverme singleElement.
 // Si es multi > No hay best fit. Tiene una lista de cachos que componen la selección.
 // Creando un problema nuevo que requiere una solución concreta a este problema concreto.
@@ -41,5 +50,4 @@ randomButton.addEventListener('click', function () {
 // Vamos a suponer que el texto editado es o texto o span. Y que un span solo tiene anidado span.
 // Y esto van a ser nuestro universo.
 
-// TAREAS
-// 2. Investigar Beaker Browser.
+export { getBestFittingStyledGroup };
