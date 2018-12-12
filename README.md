@@ -6,7 +6,7 @@ Proyecto tipográfico atascado
 ### H1
 Como usuario, me gustaría poder probar el tamaño de las tipografías para ver como funcionan en tamaños pequeños y grandes de x
 *Prioridad* Baja
-*Estimación* 0.5
+*Estimación* 0.6
 
 ### H2
 Como usuario, también me gustaría poder jugar con los tamaños de línea del texto para ver como funcionan con tamaños grandes y pequeños
